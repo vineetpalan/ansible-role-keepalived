@@ -37,8 +37,8 @@ vrrp_instance {{ item.name }} {
 {% if item.use_unicast is defined and item.use_unicast %}
 
   unicast_src_ip {{ item.unicast_src_ip }}
-{% for peer in item.unicast_peers %}
   unicast_peer {
+{% for peer in item.unicast_peers %}
     {{ peer }}
 {% endfor %}
   }
